@@ -14,3 +14,5 @@ drupal_dosyanız/primarymenu şeklinde yazarak anket ile ilgili sayfalara ulaşa
 ![survey2](https://user-images.githubusercontent.com/50804334/103566426-0c846000-4ed3-11eb-87ac-9224ec3b9e17.PNG)
   
   ## Modülün Kullanımı 
+  
+  modülün kullanımına https://www.youtube.com/watch?v=8VnNmS-DjNU linkinden ulaşablirsiniz.
