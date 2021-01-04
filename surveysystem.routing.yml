@@ -1,0 +1,60 @@
+surveysystem.add:
+  path: '/addsurvey'
+  defaults:
+    _form: '\Drupal\surveysystem\Form\AddSurveyForm'
+    _title: 'Anket Ekleme Formu'
+  requirements:
+    _permission: 'administer surveysystem'   
+
+surveysystem.survey:
+  path: '/survey'
+  defaults:
+    _form: '\Drupal\surveysystem\Form\SurveyForm'
+    _title: 'Anket'
+  requirements:
+    _permission: 'view surveysystem'
+
+surveysystem.start:
+  path: '/startsurvey'
+  defaults:
+    _form: '\Drupal\surveysystem\Form\StartSurveyForm'
+    _title: 'Anketler'
+  requirements:
+    _permission: 'view surveysystem'
+
+surveysystem.edit:
+  path: '/editsurvey'
+  defaults:
+    _title: 'Özel Anketleri Düzenleme'
+    _form: '\Drupal\surveysystem\Form\EditSurveyForm'
+  requirements:
+    _permission: 'administer surveysystem'
+
+
+surveysystem.editquestion:
+  path: '/editquestion'
+  defaults:
+    _form: '\Drupal\surveysystem\Form\EditQuestionForm'
+    _title: 'Soru Düzenleme '
+  requirements:
+    _permission: 'administer surveysystem'
+
+
+surveysystem.editanswer:
+  path: '/editanswer'
+  defaults:
+    _form: '\Drupal\surveysystem\Form\EditAnswerForm'
+  requirements:
+    _permission: 'administer surveysystem'
+
+surveysystem.primarymenu:
+  path: '/primarymenu'
+  defaults:
+    _form: '\Drupal\surveysystem\Form\PrimaryMenuForm'
+    _title: ' form'
+  requirements:
+    _permission: 'administer surveysystem'
+
+
+
+

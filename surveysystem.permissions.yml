@@ -1,0 +1,11 @@
+view surveysystem:
+  title: 'Anket Formu'
+  description: 'View and submit the Survey form.'
+access surveysystem report:
+  title: 'Anket listesi'
+  description: 'View the report listing all Survey submitted.'
+administer surveysystem:
+  title: 'Anket Yöneticisi Ayarları'
+  description: 'Access the Survey administrative settings page.'
+  restrict access: true
+

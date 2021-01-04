@@ -1,0 +1,7 @@
+name: Survey System
+type: module
+description: this is project example for ozguryazilim
+package: Survey System
+version: 1.0
+core : '8.x'
+configure: surveysystem.admin_settings

@@ -1,0 +1,161 @@
+<?php
+/**
+ * Implements hook_schema().
+ *
+ */
+function surveysystem_schema() {
+  $schema['question'] = array(
+    'description' => 'soruları içerir',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'survey_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'question' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('id'),
+  );  
+ $schema['survey'] = array(
+   'description' => 'anketleri içerir',
+    'fields' => array(
+      'survey_id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE, 
+      ),
+      'user_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+        'survey_name' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+        'survey_time' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+        'checked' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+
+    ),
+    'primary key' => array('survey_id'),
+  );
+  $schema['answers'] = array(
+    'description' => 'cevapları içerir.',
+    'fields' => array(
+      'answer_id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE, 
+      ),
+      'question_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+        'answer_name' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('answer_id'),
+  );
+
+$schema['results'] = array(
+  'description' => 'sonuçları içerir',
+    'fields' => array(
+      'result_id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE, 
+      ),
+      'question_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'survey_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'user_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'answer_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('result_id'),
+  );
+
+$schema['comments'] = array(
+  'description' => 'yorumları içerir',
+    'fields' => array(
+      'comment_id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE, 
+      ),
+      'comment_content' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'comment_aliance' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'survey_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'user_id' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('comment_id'),
+  );
+
+  return $schema;
+}
+
+
+
